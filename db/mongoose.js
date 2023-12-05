@@ -4,8 +4,8 @@ require('dotenv').config()
 process.env.MONGODBURI
 console.log(process.env.MONGODBURI,"mongodeuri")
 mongoose.connect(process.env.MONGODBURI,{
-    useNewUrlParser: true,
-  useUnifiedTopology: true,
+//     useNewUrlParser: true,
+//   useUnifiedTopology: true,
   // useCreateIndex: true
 })
 
