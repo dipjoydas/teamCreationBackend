@@ -11,6 +11,7 @@ const user = await User.find({}).skip(skip*show).limit(show)
 res.send({user,count})
 }
 const getfilteredUser =async (req,res)=>{
+    console.log('hit')
 
     const domain =req.query.domain 
     const show = req.query.show
@@ -23,11 +24,11 @@ const getfilteredUser =async (req,res)=>{
        filerQuery.domain =new RegExp(domain,'i')
     }
     if(gender.length!=0){
-        const regexPatterns = gender.map(value => new RegExp(value, 'i'));
-        filerQuery.gender ={ $in: regexPatterns }
+        filerQuery.gender ={ $in: gender }
     }
     if(available.length!=0){
-        const regexPatterns = available.map(value => new RegExp(value, 'i'));
+     
+        const regexPatterns =available.map(value=>(value =='true')? true:false)
         filerQuery.available ={ $in: regexPatterns }
     }
    
@@ -36,6 +37,7 @@ const getfilteredUser =async (req,res)=>{
        
         const count = await User.countDocuments(filerQuery)
         const user = await User.find(filerQuery).skip(skip*show).limit(show)
+        console.log(user,'user')
         res.send({user,count})
 
     }catch(e){

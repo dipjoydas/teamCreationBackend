@@ -24,8 +24,8 @@ const userSchema = new Schema({
     avatar:String,
     domain:String,
     available:{
-        type:String,
-        default:'true'
+        type:Boolean,
+        default:true
     }
 })
 const User =mongoose.model('User',userSchema)

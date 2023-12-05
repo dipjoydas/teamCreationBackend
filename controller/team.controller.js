@@ -4,7 +4,7 @@ const addTeam =async(req,res)=>{
     const {teamName,teams} =req.body
     try{
         teams.map(async(team,index)=>{
-            const user =await User.findByIdAndUpdate(team._id,{available:'false'},{new:true})
+            const user =await User.findByIdAndUpdate(team._id,{available:false},{new:true})
         })
         const result = new Team(req.body)
         await result.save()
