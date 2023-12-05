@@ -11,5 +11,18 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongoose": "^8.0.2"
-  }
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dipjoydas/teamCreationBackend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dipjoydas/teamCreationBackend/issues"
+  },
+  "homepage": "https://github.com/dipjoydas/teamCreationBackend#readme",
+  "description": ""
 }
